@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Display.css";
+
+
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
   const getdata = async () => {
@@ -41,16 +43,23 @@ const Display = ({ contract, account }) => {
   };
   return (
     <>
-      <div className="image-list">{data}</div>
-      <input
-        type="text"
-        placeholder="Enter Address"
-        className="address"
-      ></input>
-      <button className="center button" onClick={getdata}>
-        Get Data
-      </button>
-    </>
+   <div className="flex justify-end items-center bg-gray-800">
+  <div className="">
+    <div className="image-list dark:text-white mb-4 ">{data}</div>
+    <input
+      type="text"
+      placeholder="Enter Address"
+      className="add dark:text-white rounded"
+    />
+    <button className=" doc-btn mt-4 p-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded" onClick={getdata}>
+      Get Document
+    </button>
+  </div>
+</div>
+
+
+  </>
+  
   );
 };
 export default Display;
